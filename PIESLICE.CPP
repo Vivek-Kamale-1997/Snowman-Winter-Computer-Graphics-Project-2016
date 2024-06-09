@@ -1,0 +1,30 @@
+//loading stopwatch
+#include<conio.h>
+#include<graphics.h>
+#include<dos.h>
+
+int main()
+{
+int gd=DETECT,gm,i;
+initgraph(&gd,&gm,"c:\\tc\\bgi");
+setbkcolor(RED);
+
+for(i=0;i<=360;i++)
+
+{
+//button
+line(295,180,295,173);
+line(300,180,300,173);
+rectangle(288,170,308,173);
+
+//clock
+circle(300,250,70);
+pieslice(300,250,0,i,70);
+outtextxy(200,400,"Loading.Please Wait!");
+delay(10);  //loading speed of pieslice  (low=fast)
+  }
+
+getch();
+closegraph();
+return 0;
+}  //main closes
